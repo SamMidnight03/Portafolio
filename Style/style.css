@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+} 
+
+section, section article, section article * {
+    animation-timeline: scroll(y) !important;
+    animation-range-start: var(--range-start) !important;
+    animation-range-end: var(--range-end) !important;
+}
+
+:root{
+    --background: #6F6A64;
+    --nav: #4D4E46;
+    --bacground2: #282921;
+    --text: #ffff;
+}
+
+body{
+    background: var(--background);
+    color: var(--text);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/*Barra de navegacion*/
+
+a{
+    color: var(--text);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--nav);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    min-width: 400px;
+
+}
+
+nav ul li :hover{
+    border-bottom: 2px solid var(--background);
+    font-size: 1.2rem;
+    transition: 0.5s ease-out;
+}
+
+/*Primer seccion*/
+
+.hero{
+    width: 100%;
+    min-width: 400px;
+    position: relative;
+    
+    height: 200vh;
+    animation-timeline: scroll(y) !important;
+
+}
+
+.hero article{
+    --range-start: 0px;
+    --range-end: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0%;
+    bottom: 100%;
+    height: 100vh;
+}
+
+.Fondo{
+    background: url(./img/background\ castel.jpg)center/cover no-repeat;
+    opacity: 0.6;
+    width: 100%;
+    min-width: 400px;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    animation: fondo linear 2s;
+}
+
+@keyframes fondo {
+    form{
+        opacity: 0.6;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+.hero article h1{
+    opacity: 0;
+    animation: ioColegio linear 1s;
+}
+
+#iocolegio{
+    opacity: 1;
+    width: 20%;
+    border-radius: 50%;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    animation: ioColegio linear 1s;
+}
+
+@keyframes ioColegio {
+    form{
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0.005;
+    }
+}
+
+/*About me */
+
+.about{
+    padding: 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+#about p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#about img{
+    width: 30%;
+    border-radius: 0 0  30% 30%;
+}
+
+/*artas proyectos*/
+
+#portfolio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MisProyectos{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+
+.pagina{
+    background: var(--bacground2);
+    border-radius: 20px;
+    width: 30%;
+}
+
+.pagina:hover{
+    transform: scale(1.05);
+    transition: transform 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    box-shadow: 0px 10px 71px -35px var(--bacground2);
+}
+
+.ImgProyect img{
+    width: 100%;
+    border-radius: 20px 20px 0 0 ;
+}
+
+.text{
+    border-radius: 0 0 20px 20px;
+    background: var(--bacground2);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/*Formulario de contacto*/
+
+#contact{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: var(--nav);
+}
+
+#contact form{
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    margin: 20px;
+    width: 300px;
+}
+
+form label{
+    margin-top: 20px;
+}
+
+form input{
+    border-radius: 20px;
+    padding: 6px;
+    background-color: var(--background);
+    border: 1px solid var(--bacground2);
+}
+
+input[type=text]:focus{
+    border: none;
+}
+
+form textarea{
+    border-radius: 20px;
+    background-color: var(--background);
+    border: 1px solid var(--bacground2);
+    margin-bottom: 20px;
+    width: 100%;
+    height: 5rem;
+}
+
+#contact button{
+    background-color: var(--bacground2);
+    color: var(--text);
+    border-radius: 20px;
+    border: 0;
+    font-size: 1rem;
+    width: 120px;
+    padding: 5px;
+    margin-bottom: 5rem;
+}
+
+#contact button:hover{
+    background-color: var(--background);
+    color: #0f0f0f;
+    transition: 0.5s ease-out;
+    
+}
+
+/*Footer*/
+
+footer{
+    background-color: #0f0f0f;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
